@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d7aabb1abb.js" crossorigin="anonymous"></script>  <!-- link de fontsawesome para los iconos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Chimmy Crochet</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"> Chimmy Crochet</div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#contenedorcarrusel"> Inicio</a></li>
+                <li><a href="#productos"> Productos </a>
+                    <ul>
+                        <li><a href="assets\lista.html" target="_blank"> Ver lista completa</a></li>
+                        <li><a href="#personalizado"> Pedidos personalizados</a></li>
+                    </ul>
+                </li>
+                <li><a href="#sobremi"> Sobre mi</a></li>
+                <li><a href="#contacto"> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="contenedorcarrusel">
+        <div class="itemcarrusel" id="icarrusel1">
+            <div class="tarjeta" id="tarjeta1">
+             <img src="img/FOTOPRINCIPAL1.jpg" alt="foto1">
+            </div>
+            <div class="flechas">
+                <a href="#icarrusel3"><i class="fa-solid fa-arrow-left"></i></a>
+                <a href="#icarrusel2"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="itemcarrusel" id="icarrusel2">
+            <div class="tarjeta" id="tarjeta2">
+                <img src="img/FOTOPRINCIPAL2.jpg" alt="foto2" >
+               </div>
+               <div class="flechas">
+                   <a href="#icarrusel1"><i class="fa-solid fa-arrow-left"></i></a>
+                   <a href="#icarrusel3"><i class="fa-solid fa-arrow-right"></i></a>
+               </div>
+        </div>
+        <div class="itemcarrusel" id="icarrusel3">
+            <div class="tarjeta" id="tarjeta3">
+             <img src="img/FOTOPRINCIPAL3.jpg" alt="foto3">
+            </div>
+            <div class="flechas">
+                <a href="#icarrusel2"><i class="fa-solid fa-arrow-left"></i></a>
+                <a href="#icarrusel1"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <section class="product-section">
+        <h2 id="productos">TIENDA</h2>
+        <p>Estos son algunos productos disponibles para venta directa</p>
+        <div class="products">
+            <div class="product-card">
+                <img src="img\florrosallave.JPG" alt="Flor rosada">
+                <h3>Llavero de flor rosado</h3>
+                <p>LLavero de flor rosita, en maceta. Muy cute!<br>Precio:15.00Gs</p>
+            </div>
+            <div class="product-card">
+                <img src="img\aritosrosas.JPG" alt="Aros de flores">
+                <h3>Aros de flores</h3>
+                <p>Hermosos aritos de flores rositas. Elevaran tus outfis!!
+                    <br>Precio: 10.000 Gs
+                </p>
+            </div>
+            <div class="product-card">
+                <img src="img\cookievero.JPG" alt="Conejo rosado">
+                <h3>Llavero Conejo Rosado</h3>
+                <p>Un fuerte conejo rosado te cuidará si lo llevas contigo en la mochila.<br>Precio: 15.000Gs</p>
+            </div>
+        </div>
+        <div>
+            <a href="assets/lista.html" class="btn-redirect" target="_blank">Click aqui para ver más productos</a>
+        </div>
+    </section>
+    <section class="custom-order-section">
+        <h2 id="personalizado">Pedido Personalizado</h2>
+        <p>Hacemos real cualquier forma en crochet que desees!<br><br>
+            Completa el siguiente formulario y me pondré en contacto contigo.
+        </p>
+        <form id="customOrderForm" class="custom-order-form">
+            <div>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required placeholder="Ingresa tu nombre">
+            </div>
+            <div>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required placeholder="Ingresa tu correo">
+            </div>
+            <div>
+                <label for="product-details">Detalles del pedido:</label>
+                <textarea id="product-details" name="details" rows="5" required placeholder="Describe cómo quieres que sea tu producto"></textarea>
+            </div>
+            <button type="button" onclick="sendWhatsApp()">Enviar Pedido</button>
+        </form>
+    </section>
+    <script>
+        function sendWhatsApp() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const details = document.getElementById('product-details').value;
+            
+            if (!name || !email || !details) {
+                alert('Por favor, completa todos los campos.');
+            return;
+            }
+    
+            const message = `Hola! Mi nombre es ${name}.
+            Correo: ${email}.
+            Detalles del pedido: ${details}.`;
+    
+            const phoneNumber = '595994941899'; 
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+    <section class="about-me-section" id="sobremi" >
+        <div class="about-me-container">
+            <div class="about-me-text">
+                <h2>Sobre mí</h2>
+                    <p>¡Hola! Soy Rossana Argaña, una apasionada del crochet y las manualidades. Desde hace años, disfruto creando piezas únicas y personalizadas que reflejan amor, cuidado y dedicación en cada detalle. Mi objetivo es ofrecerte productos hechos a mano con la mejor calidad y mucho cariño.</p>
+                    <p>Mi amor por el crochet comenzó como un pasatiempo, pero pronto se convirtió en mi mayor pasión y forma de expresión. Hace 2 años, nació Chimmy Crochet como un sueño lleno de ilusión y creatividad. Aunque comenzamos de manera tradicional, recientemente decidimos dar el gran paso de digitalizar nuestro proyecto para acercar nuestras creaciones a más personas.</p>
+                    <p>Cada diseño que creo está inspirado en las pequeñas cosas de la vida: los colores de la naturaleza, los momentos especiales y las historias únicas de cada cliente. Me encanta la idea de transformar un simple hilo en algo lleno de significado y belleza.</p>
+            </div>
+            <div class="about-me-image">
+                <img src="gifs\rossanaicon.gif" alt="gif rossana">
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2 id="contacto">Contacto</h2>
+        <p>¡Conéctate conmigo a través de mis redes sociales o ven a visitarme!</p>
+        <div class="contact-icons">
+            <a href="https://wa.me/595982892035" target="_blank" class="contact-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/nattyverse_/" target="_blank" class="contact-icon">
+                <i class="fa-brands fa-instagram"></i>
+                <!-- Va a mi insta personal pq la pagina todavia no tiene redes sociales -->
+            </a>
+            <a href="https://www.facebook.com/rossana.argana?mibextid=ZbWKwL" target="_blank" class="contact-icon">
+                <i class="fa-brands fa-facebook"></i>
+                <!-- Va a mi insta personal pq la pagina todavia no tiene redes sociales -->
+            </a>
+            <a href="mailto:vallejosnatty4@gmail.com" class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+        <h3>Encuéntrame aquí: </h3>
+    
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3609.9105730160118!2d-57.51235392535272!3d-25.206238124074474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDEyJzIyLjUiUyA1N8KwMzAnMzUuMiJX!5e0!3m2!1ses!2spy!4v1732475812082!5m2!1ses!2spy"
+             width="600" 
+             height="450"
+             style="border:0;" 
+             allowfullscreen="" 
+             loading="lazy" 
+             referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-text">
+                <p>© 2024 Chimmy Crochet. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>  
+</body>
+</html>

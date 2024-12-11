@@ -1,0 +1,100 @@
+.product-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #eed5e6;
+}
+
+.product-section h2 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #922468;
+}
+
+.product-section p {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2em;
+    color: #1d1b1b;
+    margin-bottom: 30px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+    justify-items: center;
+}
+
+.product-card {
+    width: 90%; 
+    max-width: 300px; 
+    background-color: rgb(247, 235, 243);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(219, 53, 117, 0.4);
+    text-align: center;
+    margin-bottom: 30px; 
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2em; 
+    color: #333;
+    margin: 10px 0;
+    text-decoration:underline;
+}
+
+.product-card p {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2em; 
+    color: #3d3939;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #d880a2;
+    color: rgb(255, 253, 253);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img {
+    max-width: 50px;
+    height: auto;
+}
+
+.footer-text p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.footer-text a{
+    padding: 0px 3%;
+    text-decoration: none;
+    color: #922468;
+}
+.footer-text a:hover{
+    color: #491636;
+}
